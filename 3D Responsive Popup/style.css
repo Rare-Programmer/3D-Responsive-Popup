@@ -1,0 +1,75 @@
+/**
+ * Copyright (C) 2022 Govind Panchawat
+ * 
+ * This file is part of 3D Responsive Popup.
+ * 
+ * 3D Responsive Popup is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * 3D Responsive Popup is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with 3D Responsive Popup.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: radial-gradient(#000, #333);
+  overflow: hidden;
+}
+
+.moving-zone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 120px;
+  margin: -60px 0 0 -150px;
+  perspective: 1000px;
+}
+.popup {
+  position: absolute;
+  width: 300px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px 0 20px 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  background: -webkit-linear-gradient(top left, #bc4e9c 40%, #f80759 60%);
+}
+.popup:before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.1);
+  transform: translateZ(-100px);
+}
+.popup-content {
+  background: #444;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px 0 10px 0;
+}
+.popup-text {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 100;
+  text-align: center;
+  transform: translateZ(15px);
+}
